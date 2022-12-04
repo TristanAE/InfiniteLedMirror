@@ -5,7 +5,7 @@ Projet inspiré de la vidéo : https://youtu.be/sAPGw0SD1DE?list=LL
 
 # I-	Conception électronique 
 
-Nous allons simplement utiliser un ruban de 30 leds programmables que nous allons relier à une Nodemcu. Cette carte nous permettra d’activer différents modes de lumières via l’application Blynk.
+Nous allons simplement utiliser un ruban de 30 leds programmables que nous allons relier à une Nodemcu. Cette carte nous permettra d’activer différents modes de lumière via l’application Blynk.
 
 # II-	Conception informatique 
 Une fois les leds connectées, nous allons utiliser l’interface de Blynk pour les piloter par wifi.
