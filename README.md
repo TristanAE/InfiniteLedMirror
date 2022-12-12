@@ -8,11 +8,24 @@ Projet inspiré de la vidéo : https://youtu.be/sAPGw0SD1DE?list=LL
 Nous allons simplement utiliser un ruban de 30 leds programmables que nous allons relier à une Nodemcu. Cette carte nous permettra d’activer différents modes de lumière via l’application Blynk.
 
 # II-	Conception informatique 
+
+a) Allumage par wifi
+
 Une fois les leds connectées, nous allons utiliser l’interface de Blynk pour les piloter par wifi.
 
 Nous mettons d’abord en place les différents boutons et pins virtuels sur l’application mobile, puis nous instancions le tout dans le code Arduino.
 
 Afin de contrôler les leds individuellement, nous utilisons la bibliothèque FastLed. Ainsi, nous implémentons dans le code différents scénarios en fonction du bouton appuyé sur Blynk
+
+b)	Allumage au rythme de la musique
+
+Pour ce second mode, nous utiliserons toujours la bibliothèque FastLed pour Arduino, ainsi qu’un programme python capable d’analyser une musique jouée sur le téléphone. 
+
+Le son est analysé grâce à la bibliothèque pyaudio puis affiché avec matplotlib ( Cf : https://fazals.ddns.net/spectrum-analyser-part-1/ ). Nous obtenons ainsi les différentes amplitudes des sons perçues.
+
+Pour faire le lien entre python et Arduino, nous utilisons pyserial en indiquant le même baudrate et le même nom de port. Nous envoyons ainsi l’amplitude de la musique par communication serial.
+
+L’Arduino écoute le buffer et récupère cette valeur. Celle-ci est convertie en nombre de 0 à 255 permettant de faire varier l’intensité des leds avec FastLED.setBrightness(). Aussi à chaque grande valeur reçue, la couleur est modifiée.
 
 # III-	Conception matérielle  
 
